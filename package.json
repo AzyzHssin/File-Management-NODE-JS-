@@ -1,0 +1,38 @@
+{
+  "name": "filting_data",
+  "version": "1.1.2",
+  "description": "Start your first Program in node js",
+  "author": "Hamza Bouzriba",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "jest-html-reporter": {
+    "pageTitle": "Your test suite",
+    "outputPath": "test-report.html",
+    "includeFailureMsg": true
+  },
+  "scripts": {
+    "start": "nodemon server/Piste.js",
+    "test-server": "jest"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "node-mocks-http": "^1.11.0",
+    "request": "^2.88.2"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2",
+    "jest": "^27.5.0",
+    "jest-html-reporter": "^3.4.2",
+    "jest-stare": "^2.3.0",
+    "nodemon": "^2.0.20",
+    "prompt-sync": "^4.2.0"
+  },
+  "bin": {
+    "execute": "Piste.js"
+  }
+}

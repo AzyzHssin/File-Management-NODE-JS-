@@ -1,0 +1,17 @@
+          at point  X= 341.6590  Y=4798.6329  Z=   0.0000
+          at point  X= 490.7145  Y=5224.2668  Z=   0.0000
+             bulge    0.0648
+            center  X=-169.9459  Y=5455.6278  Z=   0.0000
+            radius  700.0000
+       start angle       341
+         end angle       356
+          at point  X= 527.9243  Y=5401.0640  Z=   0.0000
+          at point  X= 550.4902  Y=5689.6811  Z=   0.0000
+             bulge   -0.0842
+            center  X=1248.3603  Y=5635.1173  Z=   0.0000
+            radius  700.0000
+       start angle       176
+Press ENTER to continue:
+         end angle       156
+          at point  X= 607.5604  Y=5916.8537  Z=   0.0000
+          at point  X= 762.3577  Y=6268.9351  Z=   0.0000

@@ -8,7 +8,7 @@ try {
 
     var data = fs.readFileSync('./DATA.txt', 'utf8');
     console.log("\n Your Input Is \n")
-    console.log(data.toString());   
+/*     console.log(data.toString());  */  
     var Points=[]
     var Droites=[]
     var Rayon=[]
@@ -22,26 +22,38 @@ try {
     dataNewLine.forEach(element => {
        if(element.includes("point")){
         var words=element.split(" ");
-        
+        console.log(words)
         for(var i=0;i<words.length;i++){
-            if(words[i]=="X="){
-                var x=words[i+1];
-                
-                var y=words[i+3].substring(2,words[i+3].length);
-                
-                Pindex++;
+           
+            if(words[i][0]=="X" && words[i][1]=="="){
+                if( words[i+2]==""){
+                   
+                    var x=words[i+1];
+                }
+                else{
+                    var x=words[i].substring(2,words[i].length);
+                }
+            }
+            if(words[i][0]=="Y" && words[i][1]=="="){
+                if( words[i+2]==""){
+                    var y=words[i+1];
+                }
+                else{
+                    var y=words[i].substring(2,words[i].length);
+                }
+            }
+                 
+        }
+        Pindex++;
                 Points.push(
                     {name:`P${Pindex}`,
                     X:x,
                     Y:y
                     }
                     )
-            }
-        }
        } 
     });
     console.log(Points);
-    
     for(var j=0;j<Points.length;j+=2){
         Dindex++
         Droites.push(
@@ -51,7 +63,6 @@ try {
             }
         )
     }
-
     dataNewLine.forEach(element => {
         if(element.includes("bulge")){
             
@@ -61,11 +72,9 @@ try {
                     Rayon.push(element)
                 }
                 
-            });
-        
+            });    
         }
     });
-
     console.log(Droites)
     var bulges =[]
     var radius =[]
@@ -73,7 +82,6 @@ try {
         bulges.push(Rayon[i].substring(0,Rayon[i].length-2))
     }
     console.log(bulges)
-
     dataNewLine.forEach((element )=> {
         if(element.includes("radius")){
             
@@ -99,7 +107,6 @@ bulges.forEach((element,index) => {
 });
 console.log(R)
 //cloto8
-
 var L=[]
 var Lindex=0
 R.forEach(element => {
@@ -113,9 +120,6 @@ R.forEach(element => {
         L.push({name:`L${Lindex}`,value:"a"})
     }
 });
-
-console.log("i m L",L)
-
 var Cindex=0;
 var C=[]
 R.forEach((element,index) => {
@@ -125,14 +129,11 @@ R.forEach((element,index) => {
     }
     else{
         Cindex++
-        C.push({name:`C${Cindex}`,Droite1:Droites[index].name,Droite2:Droites[index+1].name,option:element.value});
-    
+        C.push({name:`C${Cindex}`,Droite1:Droites[index].name,Droite2:Droites[index+1].name,option:element.value});  
     }
 }
-
     )
     console.log(C)
-
 //affichage
 var result=""
 Points.forEach(element => {
@@ -169,3 +170,8 @@ fs.writeFile('HamzaBouzriba.txt', result, (err) => {
 } catch(e) {
     console.log('Error:', e.stack);
 }
+
+
+
+
+
